@@ -3,6 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const obj = {
+    id: 10,
+    name: "Shamol",
+    age: 22,
+
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -10,14 +17,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>This is my name  {obj.name} and id {obj.id} and age is {obj.age} </p>
       </header>
     </div>
   );
