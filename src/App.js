@@ -10,6 +10,11 @@ function App() {
     age: 22,
 
   }
+
+  const style = {
+    color: "white",
+    backgroundColor: "yellow",
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +22,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>This is my name  {obj.name} and id {obj.id} and age is {obj.age} </p>
+        <p style={style}>This is my name  {obj.name} and id {obj.id} and age is {obj.age} </p>
       </header>
     </div>
   );
