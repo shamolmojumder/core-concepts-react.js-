@@ -16,6 +16,10 @@ function App() {
     backgroundColor: "black",
   }
   const names = ["Shomoy"]
+  const product = [
+    { name: "PhotoShop", price: "$90.99" },
+    { name: "Illastrator", price: "$60.99" }
+  ]
   return (
     <div className="App">
       <header className="App-header">
@@ -23,6 +27,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
+        {/* <Product name={product[0].name} price={product[1].price} ></Product> */}
+        <Product product={product[0]}></Product>
+        <Product product={product[1]}></Product>
         <p style={style}>This is my name  {obj.name} and id {obj.id} and age is {obj.age} </p>
         <Person name="Shamol" lastName="Mojumder"></Person>
         <Person name="Dipu" lastName="Mojumder"></Person>
@@ -31,6 +39,26 @@ function App() {
     </div>
   );
 }
+
+function Product(props) {
+  const productStyle = {
+    border: "1px solid gray",
+    broderRadious: "5px",
+    backgroundColor: "lightgray",
+    height: "200px",
+    width: "200px",
+    float: 'left'
+  }
+  const { name, price } = props.product
+  return (
+    <div style={productStyle}>
+      <h3>{name} </h3>
+      <h5>{price}</h5>
+      <button>Buy Now</button>
+    </div>
+  )
+}
+
 
 function Person(props) {  //must be Capital Letter {Person}
   const personStyle = {
