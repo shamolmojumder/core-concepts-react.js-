@@ -15,6 +15,7 @@ function App() {
     color: "white",
     backgroundColor: "black",
   }
+  const names = ["Shomoy"]
   return (
     <div className="App">
       <header className="App-header">
@@ -25,8 +26,7 @@ function App() {
         <p style={style}>This is my name  {obj.name} and id {obj.id} and age is {obj.age} </p>
         <Person name="Shamol" lastName="Mojumder"></Person>
         <Person name="Dipu" lastName="Mojumder"></Person>
-        <Person name="Shomoy" lastName="Mojumder"></Person>
-
+        <Person name={names[0]} lastName="Mojumder"></Person>{/* name added from array */}
       </header>
     </div>
   );
