@@ -4,37 +4,57 @@ import './App.css';
 
 function App() {
 
-  const obj = {
-    id: 10,
-    name: "Shamol",
-    age: 22,
+  // const obj = {
+  //   id: 10,
+  //   name: "Shamol",
+  //   age: 22,
 
-  }
+  // }
 
-  const style = {
-    color: "white",
-    backgroundColor: "black",
-  }
-  const names = ["Shomoy"]
-  const product = [
-    { name: "PhotoShop", price: "$90.99" },
-    { name: "Illastrator", price: "$60.99" }
-  ]
+  // const style = {
+  //   color: "white",
+  //   backgroundColor: "black",
+  // }
+  // const names = ["Shomoy", "Dipu", "SHamol"]
+
+  // const fullName = names.map(name => name)
+  // console.log(fullName);
+  // const product = [
+  //   { name: "PhotoShop", price: "$90.99" },
+  //   { name: "Illastrator", price: "$60.99" },
+  //   { name: "PDF reader", price: "$06.99" }
+  // ]
+
+  // const productNames = product.map(product => product.name)
+  // console.log(productNames);
+
+  const nayoks = ["Jony", "tom", "jerry"]
+  const nayokName = nayoks.map(nayok => nayok)
+  console.log(nayokName);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
+
+        <ul>
+          <li>{nayoks[0]}</li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+        </p> */}
 
         {/* <Product name={product[0].name} price={product[1].price} ></Product> */}
-        <Product product={product[0]}></Product>
+        {/* <Product product={product[0]}></Product>
         <Product product={product[1]}></Product>
         <p style={style}>This is my name  {obj.name} and id {obj.id} and age is {obj.age} </p>
         <Person name="Shamol" lastName="Mojumder"></Person>
         <Person name="Dipu" lastName="Mojumder"></Person>
-        <Person name={names[0]} lastName="Mojumder"></Person>{/* name added from array */}
+        <Person name={names[0]} lastName="Mojumder"></Person>name added from array */}
       </header>
     </div>
   );
