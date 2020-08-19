@@ -19,30 +19,45 @@ function App() {
 
   // const fullName = names.map(name => name)
   // console.log(fullName);
-  // const product = [
-  //   { name: "PhotoShop", price: "$90.99" },
-  //   { name: "Illastrator", price: "$60.99" },
-  //   { name: "PDF reader", price: "$06.99" }
-  // ]
+  const products = [
+    { name: "PhotoShop", price: "$90.99" },
+    { name: "Illastrator", price: "$60.99" },
+    { name: "PDF reader", price: "$06.99" },
+    { name: "Primer Pro", price: "$240.99" }
+  ]
 
   // const productNames = product.map(product => product.name)
   // console.log(productNames);
-
-  const nayoks = ["Jony", "tom", "jerry"]
+  const friendArry = [
+    { name: "shamol", age: 23 },
+    { name: "Dipu", age: 24 },
+    { name: "Shomoy", age: 21 }
+  ]
+  const nayoks = ["Jony", "tom", "jerry", "Kutta", "Nobita"]
   const nayokName = nayoks.map(nayok => nayok)
-  console.log(nayokName);
+  // console.log(nayokName);
   return (
     <div className="App">
       <header className="App-header">
-
+        <ul>
+          {
+            nayoks.map(nayok => <li> {nayok} </li>)
+          }
+          <li>{nayoks[0]}</li>
+        </ul>
 
         <ul>
-          <li>{nayoks[0]}</li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          {products.map(product => <li>{product.name}</li>)}
         </ul>
+
+
+        {
+          products.map(pd => <Product product={pd}></Product>)
+        }
+
+        {
+          friendArry.map(friend => <Product product={friend}></Product>)
+        }
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
