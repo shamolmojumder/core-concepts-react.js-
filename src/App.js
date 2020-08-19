@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
 
@@ -39,6 +40,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+
+        <Counter></Counter>
         <ul>
           {
             nayoks.map(nayok => <li> {nayok} </li>)
@@ -58,6 +61,11 @@ function App() {
         {
           friendArry.map(friend => <Product product={friend}></Product>)
         }
+
+        {
+          friendArry.map(friend => <Person person={friend}></Person>)
+        }
+
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -103,9 +111,24 @@ function Person(props) {  //must be Capital Letter {Person}
   }
   return (
     <div style={personStyle}>
-      <h1>My name is {props.name} last name is {props.lastName}</h1>
+      <h1>My name is {props.friend}</h1>
       <h3>Font End</h3>
     </div >
+  )
+}
+
+function Counter() {
+  const [count, setCount] = useState(10)
+  const handleClick = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+  }
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
+      <button onClick={handleClick}>Increse</button>
+    </div>
   )
 }
 export default App;
