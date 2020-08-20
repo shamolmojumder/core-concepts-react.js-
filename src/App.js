@@ -2,6 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
     { name: "Dipu", age: 24 },
     { name: "Shomoy", age: 21 }
   ]
-  const nayoks = ["Jony", "tom", "jerry", "Kutta", "Nobita"]
+  const nayoks = ["Jony", "tom", "jerry", "Kutta", "Nobita", "Doremon"]
   const nayokName = nayoks.map(nayok => nayok)
   // console.log(nayokName);
   return (
@@ -42,6 +43,7 @@ function App() {
       <header className="App-header">
 
         <Counter></Counter>
+        <Users></Users>
         <ul>
           {
             nayoks.map(nayok => <li> {nayok} </li>)
@@ -78,6 +80,8 @@ function App() {
         <Person name="Shamol" lastName="Mojumder"></Person>
         <Person name="Dipu" lastName="Mojumder"></Person>
         <Person name={names[0]} lastName="Mojumder"></Person>name added from array */}
+
+
       </header>
     </div>
   );
@@ -103,6 +107,26 @@ function Product(props) {
 }
 
 
+function Users() {
+  const [users, setUsers] = useState([])
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(data => setUsers(data))
+  }, [])
+  return (
+    <div>
+      <h3>Dynamic Users{setUsers.length}</h3>
+      <ul>
+        {
+          users.map(user => <li>{user.name})</li>)
+        }
+      </ul>
+    </div>
+  )
+
+}
+
 function Person(props) {  //must be Capital Letter {Person}
   const personStyle = {
     border: "2px solid yellow",
@@ -126,8 +150,8 @@ function Counter() {
   return (
     <div>
       <h1>Count: {count}</h1>
-      <button onClick={() => setCount(count - 1)}>Decrease</button>
-      <button onClick={handleClick}>Increse</button>
+      <button onMouseMove={() => setCount(count - 1)}>Decrease</button>
+      <button onMouseMove={handleClick}>Increse</button>
     </div>
   )
 }
